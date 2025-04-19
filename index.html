@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Nata 💛</title>
+    <link rel="preconnect" href="https:ts.googleapis.com">
+    <link rel="preconnect" href="https:ts.gstatic.com" crossorigin>
+    <link href="https:ts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f0fcff 0%, #ffe3ec 100%);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 248, 250, 0.85) 100%);
+            padding: 35px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08);
+            width: 90%;
+            max-width: 550px;
+            animation: subtleFloat 6s ease-in-out infinite;
+            border: 1px solid rgba(255, 227, 236, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes subtleFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-0.5deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(0.5deg);
+            }
+        }
+
+        body::before,
+        body::after {
+            content: '❤️';
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.1;
+            animation: sparkle 15s linear infinite;
+            z-index: 0;
+        }
+
+        body::before {
+            top: 10%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        body::after {
+            bottom: 15%;
+            right: 10%;
+            font-size: 40px;
+            animation-delay: -7s;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                opacity: 0.1;
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(90deg) scale(1.1);
+                opacity: 0.2;
+            }
+
+            50% {
+                transform: translateY(0px) rotate(180deg) scale(1);
+                opacity: 0.15;
+            }
+
+            75% {
+                transform: translateY(20px) rotate(270deg) scale(0.9);
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: translateY(0px) rotate(360deg) scale(1);
+                opacity: 0.1;
+            }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #d63384;
+            font-size: 30px;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            line-height: 1.3;
+        }
+
+        .mensaje {
+            font-size: 19px;
+            color: #6a0572;
+            margin: 25px 0;
+            min-height: 70px;
+            line-height: 1.6;
+            transition: opacity 0.5s ease-in-out;
+            font-weight: 300;
+        }
+
+        .emoji {
+            font-size: 52px;
+            margin: 15px 0 25px 0;
+            animation: popIn 0.5s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        button {
+            background-color: #f783ac;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 400;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(247, 131, 172, 0.4);
+        }
+
+        button:hover {
+            background-color: #e64980;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 15px rgba(230, 73, 128, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0px) scale(0.98);
+            box-shadow: 0 2px 5px rgba(230, 73, 128, 0.4);
+        }
+
+        .final {
+            font-family: 'Pacifico', cursive;
+            font-size: 28px;
+            color: #d63384;
+            margin-top: 30px;
+            display: none;
+            animation: aparecerSuave 2s ease forwards;
+        }
+
+        @keyframes aparecerSuave {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>100 Razones por las que Eres Especial 💛</h1>
+        <h1>❤️Espero te guste❤️</h1>
+        <div class="mensaje" id="mensaje">Porque eres la casualidad más bonita que me ha pasado ✨</div>
+        <div class="emoji" id="emoji">✨</div>
+        <button id="boton" onclick="siguienteMensaje()">Siguiente Razón 💌</button>
+        <div class="final" id="final">Te quiero mucho, Nata 🥰💛</div>
+    </div>
+
+    <script>
+        const mensajes = [
+            "Porque eres increíblemente fuerte nata, incluso cuando lo dudas 💪",             
+            "Porque siempre buscas superarte a ti misma 😎",                      
+            "Porque tienes una forma hermosa de ver el mundo 💖",             
+            "Porque eres hermosa nata, por dentro y por fuera 🌸",             
+            "Porque tu sonrisa tiene un efecto mágico, alegras cualquier lugar 😊",             
+            "Porque eres valiosa, muy valiosa, siempre, sin importar nada, eres un diamante 💎",             
+            "Porque eres suficiente, eres increible tal como eres ✅",             
+            "Porque tu autenticidad es admirable, no cambies 🌟",  
+            "Porque transmites paz y confianza con solo ser tú, eres grandiosa ❤️", 
+            "Porque admiro tu valentía al enfrentar dificultades, eres muy fuerte 🦁", 
+            "Porque tu resiliencia es verdaderamente inspiradora 🌱", 
+            "Porque no intentas ser alguien que no eres, y eso es valioso 💯", 
+            "Porque me has mostrado tu verdadero ser, y es hermoso 🙌", 
+            "Porque eres increíblemente talentosa en muchas cosas(Me sorprendes🤭)🎨", 
+            "Porque tu versatilidad me sorprende cada día 💫", 
+            "Porque siempre estás buscando aprender y mejorar 📚", 
+            "Porque tu inteligencia es evidente y admirable, eres muy inteligente, y debes empezar a volarte como te mereces 🧠", 
+            "Porque tu dedicación en todo lo que haces es ejemplar 🏆", 
+            "Porque tu esfuerzo diario es enorme, trabajas duro por lo que quieres y es de valorar muchísimo 💖", 
+            "Porque sé que todo ese esfuerzo dará frutos maravillosos(Pon cuidado que sí ❤️) 🍎", 
+            "Porque estoy seguro de que conseguirás esa casita que sueñas(Y podrás ponerla hermosa tal y como lo deseas nata🩵) 🏡🔑", 
+            "Porque eres una trabajadora incansable y constante 💼(Me alegro cuando valoran tu trabajo, lo mereces)", 
+            "Porque tienes un corazón gigante y lleno de bondad ❤️‍🩹", 
+            "Porque tienes muchos temas de los cuales enseñarme y a mi me encanta escucharte 🗣️", 
+            "Porque explicas las cosas con una claridad fascinante ✨", 
+            "Porque compartes tu conocimiento con entusiasmo contagioso 💡", 
+            "Porque haces interesante cualquier tema del que hablas 🤓", 
+            "Porque valoras los libros y el aprendizaje continuo 📖", 
+            "Porque encuentras sabiduría en podcasts y otras fuentes 🎧", 
+            "Porque tu ternura es un regalo para quienes te conocen 🤗", 
+            "Porque tu lado sensible te hace aún más humana y especial 🥰", 
+            "Porque tu risa inesperada alegra los días 😂", 
+            "Porque un abrazo tuyo se siente como volver a casa🫂", 
+            "Porque eres irremplazable 🥇", 
+            "Porque dejas huella sin siquiera intentarlo🐾", 
+            "Porque eres como la nata, haces todo mejor (Como te dije hace algun tiempo 🤭) 🧁", 
+            "Porque elevas y das dulzura a los momentos 🍬", 
+            "Porque eres el orden en el desorden y el caos 🖼️", 
+            "Porque el mundo es menos sin ti, definitivamente 💔➡️💖", 
+            "Porque tu brillo es innegable, como el de la luna 🌙", 
+            "Porque te mereces todo el amor del mundo, mereces ser amada, empezando por el propio 💞",  
+            "Porque tu presencia simplemente ilumina el lugar 🌟", 
+            "Porque tienes la capacidad de adaptarte a los cambios 🔄", 
+            "Porque eres buena en jardinería 🌿", 
+            "Porque bailas increíble y expresas alegría con el cuerpo 💃", 
+            "Porque siempre tienes conocimientos interesantes que compartir 🧐", 
+            "Porque siempre se aprende algo nuevo contigo 🎓", 
+            "Porque haces que los días insípidos se vuelvan especiales 🎉", 
+            "Porque eres ese toque único de dulzura que todo necesita 🍯", 
+            "Porque haces más dulces mis días (y los de muchos más estoy seguro) ☀️", 
+            "Porque no necesitas hacer nada extraordinario para serlo, ya lo eres ❤️ ✨", 
+            "Porque eres independiente y sabes lo que quieres 🚶‍♀️", 
+            "Porque eres una reina, no lo olvides jamás 👑", 
+            "Porque das forma a un bello futuro con tu esfuerzo 🛠️(Tambien recuerda descansar cuando lo necesites nata ❤️🤭)", 
+            "Porque estás haciendo un gran trabajo, ¡sigue así! 👍", 
+            "Porque todo saldrá bien, confía en el proceso y en ti, vas a lograr todo eso que tanto sueñas (Pasito a pasito jeje ❤️) 🙏", 
+            "Porque tu esfuerzo constante te acerca cada día a tus metas 🏁", 
+            "Porque eres más capaz de lo que a veces crees 💪✨", 
+            "Porque mereces darte a ti misma todo el amor que das ❤️", 
+            "Porque das color a los días grises 🌈", 
+            "Porque eres amable incluso en los días difíciles 😊", 
+            "Porque tu gracia y elegancia resaltan naturalmente, eres hermosa 🌹", 
+            "Porque priorizarte es lo mejor que puedes hacer por ti ✅", 
+            "Porque eres irremplazable 🫂", 
+            "Porque tu valor está dentro de ti, no en lo externo 💖", 
+            "Porque tienes un potencial infinito por descubrir 🚀", 
+            "Porque superas cada escalón con determinación 🧗‍♀️(Vas muy bien en el proyecto ❤️)", 
+            "Porque eres la definición de una mujer grandiosa 🏆", 
+            "Porque otras mujeres a tu lado son inexistentes 😉👑", 
+            "Porque mereces que te recuerden lo increíble que eres, siempre 💌", 
+            "confías en mí, y eso lo valoro infinitamente 🙏", 
+            "me recuerdas que puedo confiar en los demás 🤝", 
+            "me enseñas lo importante que es tener a alguien como tú 💖", 
+            "tu valor no depende de la opinión de nadie (No te dejes afectar por comentarios ajenos) 🙅‍♀️", 
+            "te admiro profundamente, en todos los sentidos 🩵", 
+            "eres la razón de muchas de mis sonrisas 😄", 
+            "me siento increíblemente afortunado de conocerte 🍀", 
+            "me preocupo por tu bienestar genuinamente ❤️‍🩹, cuentas conmigo siempre nata, eres muy importante para mi",
+            "no eres molestia, estoy aqui para todo lo que necesites siempre con el mismo cariño(Perdón por a  veces ser un poco frio) jeje",
+            "gracias por existir y ser como eres 🙏", 
+            "gracias por compartir conmigo y aceptar las salidas 💖", 
+            "gracias por simplemente por ser tú nata 💛", 
+            "Extras 🥰",
+            "Eres una persona maravillosa, y eso nadie lo puede negar 💛",
+            "Tú puedes con todo, siempre has podido 💪",
+            "Gracias por existir nata, de verdad 💖",
+            "Te mereces lo más bonito de este mundo 🌸",
+            "Aunque no lo veas, estás brillando desde dentro ✨",
+            "Eres tan fuerte, tan valiente, tan tú ❤️‍🔥",
+            "Me encanta cómo eres, cómo piensas, cómo sientes 🧠💓",
+            "Todo va a salir bien, confía en ti  🌈",
+            "Tu constancia vale oro, Nata 💎",
+            "Tienes un corazón precioso, no dejes que nadie te lo apague ❤️",
+            "Cada día te haces más sabia y más fuerte 💫",
+            "Mereces todo lo que sueñas y mucho más 🌠",
+            "Tu voz tiene algo que me calma, que me cura 🎶",
+            "Cuando sonríes, todo se siente más bonito 😄",
+            "Eres una luchadora con un corazón inmenso 🥹💪",
+            "Estás más cerca de tu sueño de lo que crees 🛤️🏡",
+            "Todo esfuerzo que haces, vale y valdrá la pena 🙏",
+            "Te abrazo con mis palabras cuando no puedo con mis brazos 🤗",
+            "Cada cosa linda que te pase, será merecida 🎁",
+            "Sigue, no te rindas, estás cerca 💪💗",
+            "Tú y tu esfuerzo son un ejemplo 🌱",
+            "Me inspiras más de lo que imaginas ✍️",
+            "Eres abracito y todo lo bonito 🧸",
+            "Nada de lo que haces es en vano, créeme 🛠️💛",
+            "Si supieras lo importante que eres... 🫀",
+            "Trabajadora, valiente y con un alma hermosa 🔥",
+            "Tienes derecho a descansar, y a soñar 💤🌟",
+            "Te quiero mucho, más de lo que mis palabras pueden decir 💛",
+            "Si el día está gris, recuerda que tú eres sol jeje 🌞",
+            "Mereces amor suave, sincero, bonito 💕",
+            "Todo saldrá bien, repítelo 🤭",
+            "Tienes todo lo necesario para lograr lo que sueñas 🚀",
+            "Si alguien lo puede lograr, eres tú 🧗‍♀️",
+            "Tu cansancio también habla de tu lucha 😴💖",
+            "No olvides que haces lo mejor que puedes, y eso vale mucho 🌼",
+            "Eres mi persona favorita para animar y abrazar 🐻‍❄️",
+            "Gracias por existir, otra vez 🌍",
+            "Te quiero con todos tus días buenos y malos 💛🖤",
+            "Te mereces una vida bonita, y la vas a tener 🌸",
+            "Eres belleza, fuerza y dulzura en un solo cuerpo 🌷🔥🍬",
+            "Te pienso con cariño todos los días, aunque no diga nada 💭",
+            "Vales mucho más de lo que crees 💰💖",
+            "La vida te va a sonreír, como tú le sonríes a ella 😄✨",
+            "Un día vas a mirar atrás y decir: lo logré 🏡🐻",
+            "Siempre te voy a desear cosas lindas 🌟",
+            "Nada de lo que haces pasa desapercibido, lo veo y lo valoro 👀🧡",
+            "Hoy es un buen día para recordarte lo genial que eres ☀️",
+            "Cada avance que haces es un orgullo enorme 📈",
+            "Si la vida te pesa, aquí estoy para aligerarla 🧸",
+            "Eres arte en forma de persona 🎨",
+            "Quisiera darte un abrazo largo y quedarme ahí 🫂",
+            "Confía en tu proceso, estás construyendo algo hermoso 🛠️🏠",
+            "No te rindas, lo mejor está por llegar 🛤️💛",
+            "Me importas un montón, más de lo que digo 🧸🧡",
+            "Sigue siendo tú, que así ya eres perfecta 💘",
+            "Tú también mereces que te cuiden 🧡",
+            "Hoy, como siempre... te quiero mucho 🐻💛"
+        ];
+
+        const emojis = [
+    "💪", "😎", "💖", "🌸", "😊", "💎", "✅", "🌟", "😌", "🦁", // 1-10
+    "🌱", "💯", "🙌", "🎨", "💫", "📚", "🧠", "🏆", "⭐", "🍎", // 11-20
+    "🏡", "🔑", "💼", "❤️‍🩹", "🗣️", "💡", "🎁", "🤓", "📖", "🎧", // 21-30
+    "🤗", "🥰", "😂", "🫂", "🥇", "🐾", "🧁", "🍬", "🖼️", "💔➡️💖", // 31-40
+    "🌙", "💞", "✨", "🔄", "🌿", "💃", "🧐", "🎓", "🎉", "🍯", // 41-50
+    "☀️", "✨", "🚶‍♀️", "👑", "🛠️", "😴", "👍", "🙏", "👣", "🏁", // 51-60
+    "💪✨", "💕", "🌈", "🤗", "🌹", "🏆", "🥇", "💎", "🚀", "🧗‍♀️", // 61-70
+    "📈", "👑", "😉", "💌", "🤝", "✅", "❤️", "🙅‍♀️", "🛡️", "🩵", // 71-80
+    "😄", "🍀", "❤️‍🩹", "🫂", "🧸", "✨", "🙏", "🤗", "💛", "💛", // 81-90
+    "✅", "🙏", "✨", "❤️‍🔥", "🧠💓" // 91-95
+];
+
+
+
+        let index = 0;
+        const mensajeEl = document.getElementById('mensaje');
+        const emojiEl = document.getElementById('emoji');
+        const botonEl = document.getElementById('boton');
+        const finalEl = document.getElementById('final');
+
+       
+        mensajeEl.textContent = mensajes[0];
+        emojiEl.textContent = emojis[0];
+
+        function siguienteMensaje() {
+            index++;
+
+            if (index < mensajes.length) {
+                mensajeEl.style.opacity = 0;
+
+                setTimeout(() => {
+                    mensajeEl.textContent = mensajes[index];
+                    emojiEl.textContent = emojis[index % emojis.length];
+
+                    emojiEl.style.animation = 'none';
+                    void emojiEl.offsetWidth;
+                    emojiEl.style.animation = 'popIn 0.5s ease-out';
+
+                    mensajeEl.style.opacity = 1;
+                }, 500);
+
+            } else {
+                mensajeEl.style.opacity = 0;
+                emojiEl.style.opacity = 0;
+                botonEl.style.transform = 'scale(0)';
+                botonEl.style.opacity = 0;
+
+                setTimeout(() => {
+                    mensajeEl.style.display = 'none';
+                    emojiEl.style.display = 'none';
+                    botonEl.style.display = 'none';
+                    finalEl.style.display = 'block';
+                }, 500);
+            }
+        }
+    </script>
+</body>
+
+</html>
