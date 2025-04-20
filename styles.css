@@ -1,0 +1,231 @@
+body {
+
+    background-image: url('https://res.cloudinary.com/dmz8e9rsx/image/upload/v1745169790/flowers-8255544_1280_mewdm9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card {
+    background-image: url('https://res.cloudinary.com/dmz8e9rsx/image/upload/v1745169789/istockphoto-2201766962-612x612_zvsh1v.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 35px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(214, 51, 132, 0.15), 0 5px 15px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 550px;
+    animation: subtleFloat 6s ease-in-out infinite;
+    border: 1px solid rgba(255, 227, 236, 0.8);
+    position: relative;
+    z-index: 1;
+    color: #333;
+}
+
+@keyframes subtleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(-0.5deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+}
+
+body::before,
+body::after {
+    content: '💝';
+    position: absolute;
+    font-size: 90px;
+    opacity: 0.7;
+    animation: sparkle 15s linear infinite;
+    z-index: 0;
+}
+
+body::before {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+body::after {
+    bottom: 15%;
+    right: 10%;
+    font-size: 40px;
+    animation-delay: -7s;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+    }
+
+    25% {
+        transform: translateY(-20px) rotate(90deg) scale(1.1);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateY(0px) rotate(180deg) scale(1);
+        opacity: 0.15;
+    }
+
+    75% {
+        transform: translateY(20px) rotate(270deg) scale(0.9);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(0px) rotate(360deg) scale(1);
+        opacity: 0.1;
+    }
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #d63384;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    line-height: 1.3;
+}
+
+.mensaje {
+    font-size: 19px;
+    color: #6a0572;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 25px 0;
+    min-height: 70px;
+    line-height: 1.6;
+    transition: opacity 0.5s ease-in-out;
+    font-weight: 400;
+}
+
+.emoji {
+    font-size: 52px;
+    margin: 15px 0 25px 0;
+    animation: popIn 0.5s ease-out;
+    text-shadow: 0 0 5px white;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+button {
+    background-color: #f783ac;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #e64980;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.final {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #d63384;
+    margin-top: 30px;
+    display: none;
+    animation: aparecerSuave 2s ease forwards;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@keyframes aparecerSuave {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.heart-sparkle {
+    content: '💝';
+    position: absolute;
+    opacity: 0.7;
+    animation: sparkle 15s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.heart-sparkle::before {
+    content: '💝';
+}
+
+.heart1 {
+    top: 10%;
+    left: 15%;
+    font-size: 90px;
+    animation-delay: 0s;
+}
+
+.heart2 {
+    bottom: 15%;
+    right: 10%;
+    font-size: 100px;
+    animation-delay: -7s;
+}
+
+.heart3 {
+    top: 50%;
+    left: 5%;
+    font-size: 90px;
+    animation-delay: -3s;
+}
+
+.heart4 {
+    top: 5%;
+    right: 25%;
+    font-size: 95px;
+    animation-delay: -11s;
+}
