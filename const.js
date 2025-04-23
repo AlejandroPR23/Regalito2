@@ -16,7 +16,7 @@ const mensajes = [
     "Porque eres increíblemente talentosa en muchas cosas(Me sorprendes🤭)🎨",
     "Porque tu versatilidad me sorprende cada día 💫",
     "Porque siempre estás buscando aprender y mejorar 📚",
-    "Porque tu inteligencia es evidente y admirable, eres muy inteligente, y debes empezar a volarte como te mereces 🧠",
+    "Porque tu inteligencia es evidente y admirable, eres muy inteligente, y debes empezar a valorarte como te mereces 🧠",
     "Porque tu dedicación en todo lo que haces es ejemplar 🏆",
     "Porque tu esfuerzo diario es enorme, trabajas duro por lo que quieres y es de valorar muchísimo 💖",
     "Porque sé que todo ese esfuerzo dará frutos maravillosos(Pon cuidado que sí ❤️) 🍎",
@@ -63,7 +63,7 @@ const mensajes = [
     "Porque eres amable incluso en los días difíciles 😊",
     "Porque tu gracia y elegancia resaltan naturalmente, eres hermosa 🌹",
     "Porque priorizarte es lo mejor que puedes hacer por ti ✅",
-    "Porque eres irremplazable 🫂",
+    "Porque eres importante y especial, eres increíble, eres muy valiosa 🫂. No lo olvides nunca, por favor.",
     "Porque tu valor está dentro de ti, no en lo externo 💖",
     "Porque tienes un potencial infinito por descubrir 🚀",
     "Porque superas cada escalón con determinación 🧗‍♀️(Vas muy bien en el proyecto ❤️)",
@@ -142,18 +142,19 @@ const mensajes = [
     "Hoy, como siempre... te quiero mucho 🐻💛"
 ];
 
-const emojis = ["💝",
-    "💪", "😎", "💖", "🌸", "😊", "💎", "✅", "🌟", "❤️", "🦁", "🌱", "💯", "🙌", "🤭🎨", "💫", "📚",
-    "🧠", "🏆", "💖", "❤️🍎", "🩵🏡🔑", "💼", "❤️‍🩹", "🗣️", "✨", "💡", "🤓", "📖", "🎧", "🤗",
-    "🥰", "😂", "🫂", "🥇", "🐾", "🤭🧁", "🍬", "🖼️", "💔➡️💖", "🌙", "💞", "🌟", "🔄", "🌿", "💃",
-    "🧐", "🎓", "🎉", "🍯", "☀️", "❤️✨", "🚶‍♀️", "👑", "🛠️❤️🤭", "👍", "❤️🙏", "🏁", "💪✨",
-    "❤️", "🌈", "😊", "🌹", "✅", "🫂", "💖", "🚀", "🧗‍♀️❤️", "🏆", "😉👑", "💌", "🙏", "🤝",
-    "💖", "🙅‍♀️", "🩵", "😄", "🍀", "❤️‍🩹", "", "", "🙏", "💖", "💛", "🥰", "💛", "💪", "💖", "🌸",
-    "✨", "❤️‍🔥", "🧠💓", "🌈", "💎", "❤️", "💫", "🌠", "🎶", "😄", "🥹💪", "🛤️🏡", "🙏", "🤗",
-    "🎁", "💪💗", "🌱", "✍️", "🧸", "🛠️💛", "🫀", "🔥", "💤🌟", "💛", "🌞", "💕", "🤭", "🚀",
-    "🧗‍♀️", "😴💖", "🌼", "🐻‍❄️", "🌍", "💛🖤", "🌸", "🌷🔥🍬", "💭", "💰💖", "😄✨", "🏡🐻", "🌟",
-    "👀🧡", "☀️", "📈", "🧸", "🎨", "🫂", "🛠️🏠", "🛤️💛", "🧸🧡", "💘", "🧡"
-  ];
+// Emojis extraídos directamente del final de cada mensaje
+const emojis = [
+    "💝", "💪", "😎", "💖", "🌸", "😊", "💎", "✅", "🌟", "❤️", "🦁", "🌱", "💯", "🙌", "🎨", "💫", "📚", 
+    "🧠", "🏆", "💖", "🍎", "🏡🔑", "💼", "❤️‍🩹", "🗣️", "✨", "💡", "🤓", "📖", "🎧", "🤗", "🥰", "😂", 
+    "🫂", "🥇", "🐾", "🧁", "🍬", "🖼️", "💔➡️💖", "🌙", "💞", "🌟", "🔄", "🌿", "💃", "🧐", "🎓", "🎉", 
+    "🍯", "☀️", "❤️✨", "🚶‍♀️", "👑", "🛠️", "👍", "🙏", "🏁", "💪✨", "❤️", "🌈", "😊", "🌹", "✅", "🫂", 
+    "💖", "🚀", "🧗‍♀️", "🏆", "😉👑", "💌", "🙏", "🤝", "💖", "🙅‍♀️", "🩵", "😄", "🍀", "❤️‍🩹", "", "🙏", 
+    "💖", "💛", "🥰", "💛", "💪", "💖", "🌸", "✨", "❤️‍🔥", "🧠💓", "🌈", "💎", "❤️", "💫", "🌠", "🎶", 
+    "😄", "🥹💪", "🛤️🏡", "🙏", "🤗", "🎁", "💪💗", "🌱", "✍️", "🧸", "🛠️💛", "🫀", "🔥", "💤🌟", "💛", 
+    "🌞", "💕", "🤭", "🚀", "🧗‍♀️", "😴💖", "🌼", "🐻‍❄️", "🌍", "💛🖤", "🌸", "🌷🔥🍬", "💭", "💰💖", "😄✨", 
+    "🏡🐻", "🌟", "👀🧡", "☀️", "📈", "🧸", "🎨", "🫂", "🛠️🏠", "🛤️💛", "🧸🧡", "💘", "🧡", "🐻💛"
+];
+
 
 let index = 0;
 const mensajeEl = document.getElementById('mensaje');
